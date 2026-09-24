@@ -1,35 +1,10 @@
-<<<<<<< HEAD
-# Unified CCTV Viewing and Video Intelligence Platform
+Project Description
 
-A prototype platform for unified monitoring of CCTV feeds from multiple independent departmental VMS systems.
+The Unified CCTV Control Room is a centralized CCTV monitoring and management platform designed to provide a single interface for monitoring camera systems from multiple departments and locations. The platform includes a structured camera registry containing camera identification, department, district, location, camera type, and operational information. It provides filtering and search capabilities that allow control-room operators to quickly identify and access cameras based on city, status, camera code, or other available parameters.
 
-## Architecture
+The platform also includes an AI-based Camera Health Prediction module using a Random Forest machine-learning model. The system evaluates important camera-performance parameters such as uptime, response time, packet loss, and CPU usage to estimate camera health and generate a health score. This module is designed to help operators identify potentially unhealthy cameras and support proactive monitoring and maintenance.
 
-Departmental VMS
-? RTSP / ONVIF / Vendor API
-? Unified Stream Gateway
-? AI/ML Analytics
-? Metadata Database
-? Unified Control Centre
+An OpenCV-based CCTV Video Viewer is integrated into the platform for video processing and demonstration. The system can work with CCTV video sources and sample media such as cctv_demo.mp4, providing a foundation for future real-time video analytics, object detection, motion detection, and other computer-vision capabilities. The application is developed using Python, Streamlit, OpenCV, Pandas, Scikit-learn, FastAPI, PostgreSQL, SQLAlchemy, and Docker, providing a modular architecture that can be extended for larger-scale deployment.
 
-## Technology Stack
+The project is also containerized using Docker and maintained through GitHub, making the application easier to reproduce, deploy, and maintain. The current implementation demonstrates centralized CCTV registry management, camera health monitoring, AI-based prediction, video processing, database integration, and an interactive control-room dashboard.
 
-- Python
-- FastAPI
-- PostgreSQL
-- Streamlit
-- MediaMTX
-- OpenCV
-- YOLO
-- OCR
-- Docker
-
-## Project Status
-
-Phase 1: Project setup and database architecture
-=======
-# unified--cctv-platform
-The primary objective of this project is to design and develop a scalable, secure, and technology-agnostic unified CCTV viewing platform that enables authorised control-room operators to monitor CCTV feeds from multiple departmental systems through a single interface. The platform will initially demonstrate integration with at least two independent CCTV/VMS sources and provide multi-camera viewing, camera and department-wise filtering, stream status monitoring, and configurable video-wall functionality. The system will be designed so that existing departmental VMS and storage infrastructure remains unaffected.
-
-A secondary objective is to demonstrate how AI-based video analytics and metadata generation can enhance the unified viewing platform without requiring centralised storage of all video feeds. The prototype will include ANPR-based vehicle identification, event tagging, camera-wise indexing, searchable vehicle-movement records, watchlist-based alerts, and basic camera health monitoring. The final system will demonstrate an end-to-end workflow: Departmental VMS → RTSP/ONVIF/API → Unified Stream Gateway → AI/Metadata Services → Database/Search → Unified Control-Room Dashboard, providing a practical foundation for future expansion to additional departments, cameras, analytics, and operational use cases.
->>>>>>> 6d8509873df546d7286596660164668c2ec590dc
