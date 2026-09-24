@@ -1,0 +1,71 @@
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: cctv_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: cctv_registry
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+
+    container_name: cctv_backend
+    restart: unless-stopped
+
+    depends_on:
+      - postgres
+
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: cctv_registry
+
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/cctv_registry
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./data:/app/data
+      - ./media:/app/media
+
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+
+    container_name: cctv_frontend
+    restart: unless-stopped
+
+    depends_on:
+      - backend
+
+    environment:
+      API_BASE_URL: http://backend:8000
+
+    ports:
+      - "8501:8501"
+
+    volumes:
+      - ./media:/app/media
+      - ./data:/app/data
+
+
+volumes:
+  postgres_data:

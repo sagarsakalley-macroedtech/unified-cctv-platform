@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+
+.env
+
+.vscode/
+.idea/
+
+*.log
+
+data/raw/
+data/processed/
+
+models/
+weights/
