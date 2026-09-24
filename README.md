@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Unified CCTV Viewing and Video Intelligence Platform
 
 A prototype platform for unified monitoring of CCTV feeds from multiple independent departmental VMS systems.
@@ -26,3 +27,9 @@ Departmental VMS
 ## Project Status
 
 Phase 1: Project setup and database architecture
+=======
+# unified--cctv-platform
+The primary objective of this project is to design and develop a scalable, secure, and technology-agnostic unified CCTV viewing platform that enables authorised control-room operators to monitor CCTV feeds from multiple departmental systems through a single interface. The platform will initially demonstrate integration with at least two independent CCTV/VMS sources and provide multi-camera viewing, camera and department-wise filtering, stream status monitoring, and configurable video-wall functionality. The system will be designed so that existing departmental VMS and storage infrastructure remains unaffected.
+
+A secondary objective is to demonstrate how AI-based video analytics and metadata generation can enhance the unified viewing platform without requiring centralised storage of all video feeds. The prototype will include ANPR-based vehicle identification, event tagging, camera-wise indexing, searchable vehicle-movement records, watchlist-based alerts, and basic camera health monitoring. The final system will demonstrate an end-to-end workflow: Departmental VMS → RTSP/ONVIF/API → Unified Stream Gateway → AI/Metadata Services → Database/Search → Unified Control-Room Dashboard, providing a practical foundation for future expansion to additional departments, cameras, analytics, and operational use cases.
+>>>>>>> 6d8509873df546d7286596660164668c2ec590dc
