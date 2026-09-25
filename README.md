@@ -8,3 +8,4 @@ An OpenCV-based CCTV Video Viewer is integrated into the platform for video proc
 
 The project is also containerized using Docker and maintained through GitHub, making the application easier to reproduce, deploy, and maintain. The current implementation demonstrates centralized CCTV registry management, camera health monitoring, AI-based prediction, video processing, database integration, and an interactive control-room dashboard.
 
+Live demo : https://unified-cctv-platform.streamlit.app/
